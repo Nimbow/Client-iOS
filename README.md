@@ -31,7 +31,7 @@ You find the complete API documentation here: <https://www.nimbow.com/sms-api/ni
         })
 	```
 	
-## Configuration / AppSettings
+## Configuration / Info.plist
 * `Nimbow.Api.Url`: string, required, the URL pointing to the Nimbow API endpoint
 * `Nimbow.Api.Key`: string, required, the API Key to use when communicating with the Nimbow API
 
