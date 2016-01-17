@@ -13,7 +13,7 @@ public enum SendSmsStatusCode : Int {
     UnknownError = 2,
     InsufficientCredit = 3,
     InvalidApiCall = 4,
-    nvalidApiKey = 5,
+    InvalidApiKey = 5,
     
     ReceiverMissing = 101,
     MessageTextMissing = 102,
