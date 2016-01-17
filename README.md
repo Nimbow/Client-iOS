@@ -20,7 +20,7 @@ You find the complete API documentation here: <https://www.nimbow.com/sms-api/ni
 
 4. Start sending SMS
 	* asynchronous
-	```Swift 2
+	```Swift
 	NimbowApiClientAsync.SharedInstance.SendSmsAsync(
       TextSms(
         from: "MyApp",
