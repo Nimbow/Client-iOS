@@ -12,6 +12,7 @@ final class SendSmsRequest {
     var From: String?
     var To: String?
     var Text: String?
+    var ClientRef: String?
     var Type: SmsType
     var Test: Bool
     var GetMessageId: Bool
@@ -19,6 +20,8 @@ final class SendSmsRequest {
     var GetFrom: Bool
     var GetTo: Bool
     var GetNetCost: Bool
+    
+    let ClientRefRegex = "^[a-zA-Z0-9-_]+$"
     
     init() {
         Type = SmsType.Gsm
@@ -37,13 +40,21 @@ final class SendSmsRequest {
         Text = text
     }
     
-    func ToQueryParameterString() -> String {
+    func ToQueryParameterString() throws -> String {
         var queryParameters = Set<String>()
         
         if (Type != SmsType.Gsm) { queryParameters.insert("type=\(Type.rawValue)") }
         if (From != nil && !From!.isEmpty) { queryParameters.insert("from=\(From!)") }
         if (To != nil && !To!.isEmpty) { queryParameters.insert("to=\(To!)") }
         queryParameters.insert("text=\(Text!)")
+        
+        if (ClientRef != nil && !ClientRef!.isEmpty) {
+            if (!NSPredicate(format:"SELF MATCHES %@", ClientRefRegex).evaluateWithObject(ClientRef)) {
+                throw NimbowError.WrongClientRefFormat(clientRef: ClientRef!)
+            }
+            queryParameters.insert("clientRef=\(ClientRef!)")
+        }
+        
         if (Test) { queryParameters.insert("test=1") }
         if (GetMessageId) { queryParameters.insert("getMessageId=1") }
         if (GetMessageParts) { queryParameters.insert("getMessageParts=1") }

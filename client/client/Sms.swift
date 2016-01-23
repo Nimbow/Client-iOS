@@ -9,6 +9,7 @@
 public class Sms {
     public var From: String?
     public var To: String?
+    public var ClientRef: String?
     public var Test: Bool
     public var GetMessageId: Bool
     public var GetMessageParts: Bool
@@ -31,6 +32,7 @@ public class Sms {
         let request = SendSmsRequest()
         request.From = From
         request.To = To
+        request.ClientRef = ClientRef
         request.Test = Test
         request.GetMessageId = GetMessageId
         request.GetMessageParts = GetMessageParts

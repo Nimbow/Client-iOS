@@ -25,8 +25,8 @@ public class NimbowApiClientAsync
         return infoValues["Nimbow.Api.Key"] as! String
     }
     
-    public func SendSmsAsync(request: Sms, completitionHandler: (response: SendSmsResponse) -> ()) {
-        let url = NSURL(string: baseUrl + request.ToSendSmsRequest().ToQueryParameterString())
+    public func SendSmsAsync(request: Sms, completitionHandler: (response: SendSmsResponse) -> ()) throws {
+        let url = try NSURL(string: baseUrl + request.ToSendSmsRequest().ToQueryParameterString())
         let session = NSURLSession.sharedSession()
         let mutableRequest = NSMutableURLRequest(URL: url!)
         mutableRequest.setValue(apiKey, forHTTPHeaderField: "X-Nimbow-API-Key")
