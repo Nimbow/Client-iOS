@@ -40,7 +40,6 @@ You find the complete API documentation here: <https://www.nimbow.com/sms-api/ni
 
 Missing:
 * Request DLR
-* Other SMS types (binary, unicode)
 
 ## Samples
 

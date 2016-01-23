@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E5DD5061C53AE31006BC2E5 /* NimbowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DD5051C53AE31006BC2E5 /* NimbowError.swift */; };
+		7E5DD50A1C53B7E0006BC2E5 /* UnicodeSms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DD5091C53B7E0006BC2E5 /* UnicodeSms.swift */; };
+		7E5DD50C1C53BD7A006BC2E5 /* BinarySms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DD50B1C53BD7A006BC2E5 /* BinarySms.swift */; };
 		7E86853F1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86853E1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift */; };
 		7E8685411C31E6110049B1C1 /* SendSmsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685401C31E6110049B1C1 /* SendSmsResponse.swift */; };
 		7E8685431C31E6990049B1C1 /* SendSmsStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685421C31E6990049B1C1 /* SendSmsStatusCode.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		7E5DD5051C53AE31006BC2E5 /* NimbowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbowError.swift; sourceTree = "<group>"; };
+		7E5DD5091C53B7E0006BC2E5 /* UnicodeSms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeSms.swift; sourceTree = "<group>"; };
+		7E5DD50B1C53BD7A006BC2E5 /* BinarySms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySms.swift; sourceTree = "<group>"; };
 		7E86853E1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbowApiClientAsync.swift; sourceTree = "<group>"; };
 		7E8685401C31E6110049B1C1 /* SendSmsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSmsResponse.swift; sourceTree = "<group>"; };
 		7E8685421C31E6990049B1C1 /* SendSmsStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSmsStatusCode.swift; sourceTree = "<group>"; };
@@ -63,15 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				7EE792951C27746C0092D348 /* Sms.swift */,
+				7E8685461C31F45F0049B1C1 /* SmsType.swift */,
 				7EE792961C27746C0092D348 /* TextSms.swift */,
-				7EE7928D1C2774110092D348 /* client.h */,
-				7EE7928F1C2774110092D348 /* Info.plist */,
+				7E5DD5091C53B7E0006BC2E5 /* UnicodeSms.swift */,
+				7E5DD50B1C53BD7A006BC2E5 /* BinarySms.swift */,
 				7E86853E1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift */,
+				7E8685441C31F3FB0049B1C1 /* SendSmsRequest.swift */,
 				7E8685401C31E6110049B1C1 /* SendSmsResponse.swift */,
 				7E8685421C31E6990049B1C1 /* SendSmsStatusCode.swift */,
-				7E8685441C31F3FB0049B1C1 /* SendSmsRequest.swift */,
-				7E8685461C31F45F0049B1C1 /* SmsType.swift */,
 				7E5DD5051C53AE31006BC2E5 /* NimbowError.swift */,
+				7EE7928D1C2774110092D348 /* client.h */,
+				7EE7928F1C2774110092D348 /* Info.plist */,
 			);
 			path = client;
 			sourceTree = "<group>";
@@ -154,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5DD50A1C53B7E0006BC2E5 /* UnicodeSms.swift in Sources */,
 				7E8685431C31E6990049B1C1 /* SendSmsStatusCode.swift in Sources */,
+				7E5DD50C1C53BD7A006BC2E5 /* BinarySms.swift in Sources */,
 				7E86853F1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift in Sources */,
 				7E5DD5061C53AE31006BC2E5 /* NimbowError.swift in Sources */,
 				7E8685411C31E6110049B1C1 /* SendSmsResponse.swift in Sources */,

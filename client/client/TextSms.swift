@@ -16,6 +16,7 @@ public final class TextSms : Sms {
     
     override func ToSendSmsRequest() -> SendSmsRequest {
         let request = super.ToSendSmsRequest()
+        request.Type = SmsType.Gsm
         request.Text = Text
         return request
     }
