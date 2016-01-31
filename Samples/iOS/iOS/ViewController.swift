@@ -32,7 +32,15 @@ class ViewController: UIViewController {
     @IBAction func sendUp(sender: UIButton) {
         do
         {
-            try NimbowApiClientAsync.SharedInstance.SendSmsAsync(TextSms(from: fromText!.text!, to: toText!.text!, text: contentText!.text!), completitionHandler : {
+            let sms: Sms
+            switch sender.tag {
+                case 0: sms = TextSms(from: fromText!.text!, to: toText!.text!, text: contentText!.text!)
+                case 1: sms = UnicodeSms(from: fromText!.text!, to: toText!.text!, text: contentText!.text!)
+                case 2: sms = BinarySms(from: fromText!.text!, to: toText!.text!, data: contentText!.text!.dataUsingEncoding(NSASCIIStringEncoding), udh: "06050423F423f4")
+                default: return
+            }
+            
+            try NimbowApiClientAsync.SharedInstance.SendSmsAsync(sms, completitionHandler : {
                 response in
                 dispatch_async(dispatch_get_main_queue()) {
                     var statusString = String(response.StatusCode)
@@ -45,6 +53,10 @@ class ViewController: UIViewController {
         }
         catch NimbowError.WrongClientRefFormat(let clientRef) {
             self.urlResult.text = "Invalid ClientRef: \(clientRef)"
+            self.urlResult.textColor = UIColor.redColor()
+        }
+        catch NimbowError.WrongUdhFormat(let udh) {
+            self.urlResult.text = "Invalid Udh: \(udh)"
             self.urlResult.textColor = UIColor.redColor()
         }
         catch {

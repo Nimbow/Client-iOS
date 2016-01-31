@@ -16,6 +16,7 @@ public class Sms {
     public var GetFrom: Bool
     public var GetTo: Bool
     public var GetNetCost: Bool
+    public var GetDeliveryReport: Bool
     
     init(from: String?, to: String?) {
         From = from
@@ -26,6 +27,7 @@ public class Sms {
         GetFrom = false
         GetTo = false
         GetNetCost = false
+        GetDeliveryReport = false
     }
     
     func ToSendSmsRequest() -> SendSmsRequest {
@@ -39,6 +41,7 @@ public class Sms {
         request.GetFrom = GetFrom
         request.GetTo = GetTo
         request.GetNetCost = GetNetCost
+        request.GetDeliveryReport = GetDeliveryReport
         return request
     }
 }

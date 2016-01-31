@@ -8,15 +8,18 @@
 
 public final class BinarySms : Sms {
     public var Data: NSData?
+    public var Udh: String?
     
-    public convenience init(from: String?, to: String?, data: NSData?) {
+    public convenience init(from: String?, to: String?, data: NSData?, udh: String?) {
         self.init(from: from, to: to)
         Data = data
+        Udh = udh
     }
     
     override func ToSendSmsRequest() -> SendSmsRequest {
         let request = super.ToSendSmsRequest()
         request.Type = SmsType.Binary
+        request.Udh = Udh
         
         if (Data == nil) { return request; }
         

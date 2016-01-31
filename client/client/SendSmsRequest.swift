@@ -20,8 +20,11 @@ final class SendSmsRequest {
     var GetFrom: Bool
     var GetTo: Bool
     var GetNetCost: Bool
+    var GetDeliveryReport: Bool
+    var Udh: String?
     
     let ClientRefRegex = "^[a-zA-Z0-9-_]+$"
+    let UdhRegex = "^[a-fA-F0-9-_]{1,14}$"
     
     init() {
         Type = SmsType.Gsm
@@ -31,6 +34,7 @@ final class SendSmsRequest {
         GetFrom = false
         GetTo = false
         GetNetCost = false
+        GetDeliveryReport = false
     }
     
     convenience init(from: String, to: String, text: String) {
@@ -54,6 +58,12 @@ final class SendSmsRequest {
             }
             queryParameters.insert("clientRef=\(ClientRef!)")
         }
+        if (Udh != nil && !Udh!.isEmpty) {
+            if (!NSPredicate(format:"SELF MATCHES %@", UdhRegex).evaluateWithObject(Udh)) {
+                throw NimbowError.WrongUdhFormat(udh: Udh!)
+            }
+            queryParameters.insert("udh=\(Udh!)")
+        }
         
         if (Test) { queryParameters.insert("test=1") }
         if (GetMessageId) { queryParameters.insert("getMessageId=1") }
@@ -61,6 +71,7 @@ final class SendSmsRequest {
         if (GetFrom) { queryParameters.insert("getFrom=1") }
         if (GetTo) { queryParameters.insert("getTo=1") }
         if (GetNetCost) { queryParameters.insert("getNetCost=1") }
+        if (GetDeliveryReport) { queryParameters.insert("getDeliveryReport=1") }
         
         return queryParameters.joinWithSeparator("&")
     }

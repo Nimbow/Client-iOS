@@ -8,4 +8,5 @@
 
 public enum NimbowError : ErrorType {
     case WrongClientRefFormat(clientRef: String)
+    case WrongUdhFormat(udh: String)
 }
