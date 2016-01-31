@@ -44,10 +44,10 @@ class ViewController: UIViewController {
                 response in
                 dispatch_async(dispatch_get_main_queue()) {
                     var statusString = String(response.StatusCode)
-                    statusString = statusString.substringFromIndex(statusString.startIndex.advancedBy(34)) // Values were chosen expertly by developer counting characters on screen
+                    statusString = statusString.substringFromIndex(statusString.startIndex.advancedBy(33)) // Values were chosen expertly by developer counting characters on screen
                     statusString = statusString.substringToIndex(statusString.endIndex.advancedBy(-1))
                     self.urlResult.text = statusString
-                    self.urlResult.textColor = response.StatusCode == SendSmsStatusCode.Success ? UIColor.greenColor() : UIColor.redColor()
+                    self.urlResult.textColor = response.StatusCode == NimbowStatusCode.Success ? UIColor.greenColor() : UIColor.redColor()
                 }
             })
         }
@@ -59,6 +59,22 @@ class ViewController: UIViewController {
             self.urlResult.text = "Invalid Udh: \(udh)"
             self.urlResult.textColor = UIColor.redColor()
         }
+        catch {
+            self.urlResult.text = "Unexpected error!"
+            self.urlResult.textColor = UIColor.redColor()
+        }
+    }
+    @IBAction func balanceUp(sender: UIButton) {
+        do
+        {
+            try NimbowApiClientAsync.SharedInstance.GetBalanceAsync({ (response) -> () in
+                dispatch_async(dispatch_get_main_queue()) {
+                    var statusString = String(response.StatusCode)
+                    statusString = statusString.substringFromIndex(statusString.startIndex.advancedBy(33)) // Values were chosen expertly by    developer counting characters on screen
+                    statusString = statusString.substringToIndex(statusString.endIndex.advancedBy(-1))
+                    self.urlResult.text = statusString + "\r\nBalance: " + response.Balance!.description + "\r\nDateTime: " + response.DateTime!.description + "\r\nUnixTimeStamp: " + response.UnixTimeStamp!.description + "\r\nFreeMessagesCount: " + response.FreeMessagesCount!.description
+                    self.urlResult.textColor = response.StatusCode == NimbowStatusCode.Success ? UIColor.greenColor() : UIColor.redColor()
+                }})        }
         catch {
             self.urlResult.text = "Unexpected error!"
             self.urlResult.textColor = UIColor.redColor()

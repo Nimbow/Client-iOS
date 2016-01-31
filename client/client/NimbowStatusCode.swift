@@ -6,7 +6,7 @@
 //  Copyright © 2015 Nimbow. All rights reserved.
 //
 
-public enum SendSmsStatusCode : Int {
+public enum NimbowStatusCode : Int {
     case
     Success = 0,
     InternalError = 1,

@@ -12,9 +12,11 @@
 		7E5DD50C1C53BD7A006BC2E5 /* BinarySms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5DD50B1C53BD7A006BC2E5 /* BinarySms.swift */; };
 		7E86853F1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E86853E1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift */; };
 		7E8685411C31E6110049B1C1 /* SendSmsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685401C31E6110049B1C1 /* SendSmsResponse.swift */; };
-		7E8685431C31E6990049B1C1 /* SendSmsStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685421C31E6990049B1C1 /* SendSmsStatusCode.swift */; };
-		7E8685451C31F3FB0049B1C1 /* SendSmsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685441C31F3FB0049B1C1 /* SendSmsRequest.swift */; };
+		7E8685431C31E6990049B1C1 /* NimbowStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685421C31E6990049B1C1 /* NimbowStatusCode.swift */; };
 		7E8685471C31F45F0049B1C1 /* SmsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8685461C31F45F0049B1C1 /* SmsType.swift */; };
+		7EDD22951C5D8E84005D8987 /* GetBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD22941C5D8E84005D8987 /* GetBalanceResponse.swift */; };
+		7EDD22971C5D8F07005D8987 /* SendSmsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD22961C5D8F07005D8987 /* SendSmsRequest.swift */; };
+		7EDD22991C5D8F67005D8987 /* GetBalanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD22981C5D8F67005D8987 /* GetBalanceRequest.swift */; };
 		7EE7928E1C2774110092D348 /* client.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE7928D1C2774110092D348 /* client.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EE792971C27746C0092D348 /* Sms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE792951C27746C0092D348 /* Sms.swift */; };
 		7EE792981C27746C0092D348 /* TextSms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE792961C27746C0092D348 /* TextSms.swift */; };
@@ -26,9 +28,11 @@
 		7E5DD50B1C53BD7A006BC2E5 /* BinarySms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySms.swift; sourceTree = "<group>"; };
 		7E86853E1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbowApiClientAsync.swift; sourceTree = "<group>"; };
 		7E8685401C31E6110049B1C1 /* SendSmsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSmsResponse.swift; sourceTree = "<group>"; };
-		7E8685421C31E6990049B1C1 /* SendSmsStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSmsStatusCode.swift; sourceTree = "<group>"; };
-		7E8685441C31F3FB0049B1C1 /* SendSmsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSmsRequest.swift; sourceTree = "<group>"; };
+		7E8685421C31E6990049B1C1 /* NimbowStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbowStatusCode.swift; sourceTree = "<group>"; };
 		7E8685461C31F45F0049B1C1 /* SmsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsType.swift; sourceTree = "<group>"; };
+		7EDD22941C5D8E84005D8987 /* GetBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceResponse.swift; sourceTree = "<group>"; };
+		7EDD22961C5D8F07005D8987 /* SendSmsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendSmsRequest.swift; sourceTree = "<group>"; };
+		7EDD22981C5D8F67005D8987 /* GetBalanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalanceRequest.swift; sourceTree = "<group>"; };
 		7EE7928A1C2774110092D348 /* client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE7928D1C2774110092D348 /* client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		7EE7928F1C2774110092D348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,9 +76,11 @@
 				7E5DD5091C53B7E0006BC2E5 /* UnicodeSms.swift */,
 				7E5DD50B1C53BD7A006BC2E5 /* BinarySms.swift */,
 				7E86853E1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift */,
-				7E8685441C31F3FB0049B1C1 /* SendSmsRequest.swift */,
+				7EDD22961C5D8F07005D8987 /* SendSmsRequest.swift */,
 				7E8685401C31E6110049B1C1 /* SendSmsResponse.swift */,
-				7E8685421C31E6990049B1C1 /* SendSmsStatusCode.swift */,
+				7EDD22981C5D8F67005D8987 /* GetBalanceRequest.swift */,
+				7EDD22941C5D8E84005D8987 /* GetBalanceResponse.swift */,
+				7E8685421C31E6990049B1C1 /* NimbowStatusCode.swift */,
 				7E5DD5051C53AE31006BC2E5 /* NimbowError.swift */,
 				7EE7928D1C2774110092D348 /* client.h */,
 				7EE7928F1C2774110092D348 /* Info.plist */,
@@ -161,15 +167,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E5DD50A1C53B7E0006BC2E5 /* UnicodeSms.swift in Sources */,
-				7E8685431C31E6990049B1C1 /* SendSmsStatusCode.swift in Sources */,
+				7EDD22991C5D8F67005D8987 /* GetBalanceRequest.swift in Sources */,
+				7E8685431C31E6990049B1C1 /* NimbowStatusCode.swift in Sources */,
 				7E5DD50C1C53BD7A006BC2E5 /* BinarySms.swift in Sources */,
+				7EDD22971C5D8F07005D8987 /* SendSmsRequest.swift in Sources */,
 				7E86853F1C31E5AE0049B1C1 /* NimbowApiClientAsync.swift in Sources */,
 				7E5DD5061C53AE31006BC2E5 /* NimbowError.swift in Sources */,
 				7E8685411C31E6110049B1C1 /* SendSmsResponse.swift in Sources */,
 				7EE792981C27746C0092D348 /* TextSms.swift in Sources */,
 				7E8685471C31F45F0049B1C1 /* SmsType.swift in Sources */,
+				7EDD22951C5D8E84005D8987 /* GetBalanceResponse.swift in Sources */,
 				7EE792971C27746C0092D348 /* Sms.swift in Sources */,
-				7E8685451C31F3FB0049B1C1 /* SendSmsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

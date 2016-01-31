@@ -5,7 +5,7 @@
 	<key>Nimbow.Api.Key</key>
 	<string>INSERT_YOUR_API_KEY_HERE</string>
 	<key>Nimbow.Api.Url</key>
-	<string>https://api.nimbow.com/sms.json?</string>
+	<string>https://api.nimbow.com/</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

@@ -7,7 +7,7 @@
 //
 
 public final class SendSmsResponse {
-    public var StatusCode: SendSmsStatusCode?
+    public var StatusCode: NimbowStatusCode?
     public var MessageId: String?
     public var MessageParts: Int?
     public var From: String?
@@ -19,7 +19,7 @@ public final class SendSmsResponse {
         
         let json = try! NSJSONSerialization.JSONObjectWithData(response.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments)
         
-        r.StatusCode = SendSmsStatusCode(rawValue: (json["StatusCode"] as? Int)!)
+        r.StatusCode = NimbowStatusCode(rawValue: (json["StatusCode"] as? Int)!)
         r.MessageId = (json["MessageId"] as? String?)!
         r.MessageParts = (json["MessageParts"] as? Int?)!
         r.From = (json["From"] as? String?)!
