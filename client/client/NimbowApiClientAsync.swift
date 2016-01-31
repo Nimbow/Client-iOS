@@ -26,11 +26,13 @@ public class NimbowApiClientAsync
     }
     
     public func SendSmsAsync(request: Sms, completitionHandler: (response: SendSmsResponse) -> ()) throws {
-        let url = try NSURL(string: baseUrl + "sms.json?" + request.ToSendSmsRequest().ToQueryParameterString())
+        let url = NSURL(string: baseUrl + "sms.json")
         let session = NSURLSession.sharedSession()
         let mutableRequest = NSMutableURLRequest(URL: url!)
         mutableRequest.setValue(apiKey, forHTTPHeaderField: "X-Nimbow-API-Key")
-
+        mutableRequest.HTTPMethod = "POST"
+        mutableRequest.HTTPBody = try request.ToSendSmsRequest().ToQueryParameterString().dataUsingEncoding(NSUTF8StringEncoding)
+        
         let task = session.dataTaskWithRequest(mutableRequest, completionHandler: {(data, response, error) in
             let responseStr = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
             let response = SendSmsResponse.FromString(responseStr)
@@ -40,12 +42,12 @@ public class NimbowApiClientAsync
     }
     
     public func GetBalanceAsync(completitionHandler: (response: GetBalanceResponse) -> ()) throws {
-        let request = GetBalanceRequest(getDT: true, getTS: true, getFMC: true)
-        let url = try NSURL(string: baseUrl + "balance.json?" + request.ToQueryParameterString())
-        
+        let url = NSURL(string: baseUrl + "balance.json")
         let session = NSURLSession.sharedSession()
         let mutableRequest = NSMutableURLRequest(URL: url!)
         mutableRequest.setValue(apiKey, forHTTPHeaderField: "X-Nimbow-API-Key")
+        mutableRequest.HTTPMethod = "POST"
+        mutableRequest.HTTPBody = try GetBalanceRequest(getDT: true, getTS: true, getFMC: true).ToQueryParameterString().dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.dataTaskWithRequest(mutableRequest, completionHandler: {(data, response, error) in
             let responseStr = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
