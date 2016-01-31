@@ -35,11 +35,7 @@ You find the complete API documentation here: <https://www.nimbow.com/sms-api/ni
 * `Nimbow.Api.Url`: string, required, the URL pointing to the Nimbow API endpoint
 * `Nimbow.Api.Key`: string, required, the API Key to use when communicating with the Nimbow API
 
-## Notes
-*Missing API calls will be added soon!*
 
-Missing:
-* Request DLR
 
 ## Samples
 
